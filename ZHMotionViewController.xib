@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZHMotionViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09K-6c-OWQ">
+                    <rect key="frame" x="60" y="60" width="62" height="30"/>
+                    <state key="normal" title="开始加速"/>
+                    <connections>
+                        <action selector="startAccelermeter:" destination="-1" eventType="touchUpInside" id="DMx-dk-yK0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQq-yg-vb8">
+                    <rect key="frame" x="182" y="60" width="31" height="30"/>
+                    <state key="normal" title="停止"/>
+                    <connections>
+                        <action selector="stopAccelermeter:" destination="-1" eventType="touchUpInside" id="p7z-25-oOY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCZ-SM-FDO">
+                    <rect key="frame" x="60" y="110" width="77" height="30"/>
+                    <state key="normal" title="开始陀螺仪"/>
+                    <connections>
+                        <action selector="startGyro:" destination="-1" eventType="touchUpInside" id="Puj-5W-I9g"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tt7-Se-ZSr">
+                    <rect key="frame" x="182" y="110" width="31" height="30"/>
+                    <state key="normal" title="停止"/>
+                    <connections>
+                        <action selector="stopGyro:" destination="-1" eventType="touchUpInside" id="mfa-v6-6lt"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1PK-vH-MQe">
+                    <rect key="frame" x="60" y="160" width="77" height="30"/>
+                    <state key="normal" title="开始磁力仪"/>
+                    <connections>
+                        <action selector="startDeviceMotion:" destination="-1" eventType="touchUpInside" id="VJc-ha-yt2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8FW-Zo-0ij">
+                    <rect key="frame" x="182" y="160" width="31" height="30"/>
+                    <state key="normal" title="停止"/>
+                    <connections>
+                        <action selector="stopDeviceMotion:" destination="-1" eventType="touchUpInside" id="Egm-Fe-epD"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98B-ac-qQy">
+                    <rect key="frame" x="60" y="210" width="77" height="30"/>
+                    <state key="normal" title="开始磁强计"/>
+                    <connections>
+                        <action selector="startMagnetometer:" destination="-1" eventType="touchUpInside" id="HOL-Kk-1Hg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yie-78-iyV">
+                    <rect key="frame" x="182" y="210" width="31" height="30"/>
+                    <state key="normal" title="停止"/>
+                    <connections>
+                        <action selector="stopMagnetometer:" destination="-1" eventType="touchUpInside" id="mlw-Ti-TGz"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="98B-ac-qQy" firstAttribute="leading" secondItem="1PK-vH-MQe" secondAttribute="leading" id="1im-tI-fXa"/>
+                <constraint firstItem="09K-6c-OWQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="60" id="CaA-Ar-Xpi"/>
+                <constraint firstItem="wQq-yg-vb8" firstAttribute="leading" secondItem="09K-6c-OWQ" secondAttribute="trailing" constant="60" id="IZg-Zp-e3Z"/>
+                <constraint firstItem="Yie-78-iyV" firstAttribute="leading" secondItem="8FW-Zo-0ij" secondAttribute="leading" id="KXa-BX-Mab"/>
+                <constraint firstItem="Yie-78-iyV" firstAttribute="bottom" secondItem="98B-ac-qQy" secondAttribute="bottom" id="Ngy-Wo-CbM"/>
+                <constraint firstItem="8FW-Zo-0ij" firstAttribute="bottom" secondItem="1PK-vH-MQe" secondAttribute="bottom" id="Pv9-DD-rbr"/>
+                <constraint firstItem="98B-ac-qQy" firstAttribute="top" secondItem="1PK-vH-MQe" secondAttribute="bottom" constant="20" id="QTC-9Z-eDp"/>
+                <constraint firstItem="1PK-vH-MQe" firstAttribute="leading" secondItem="QCZ-SM-FDO" secondAttribute="leading" id="We5-dm-JmS"/>
+                <constraint firstItem="wQq-yg-vb8" firstAttribute="bottom" secondItem="09K-6c-OWQ" secondAttribute="bottom" id="aUx-QU-K5i"/>
+                <constraint firstItem="QCZ-SM-FDO" firstAttribute="leading" secondItem="09K-6c-OWQ" secondAttribute="leading" id="gQU-Td-fhx"/>
+                <constraint firstItem="tt7-Se-ZSr" firstAttribute="bottom" secondItem="QCZ-SM-FDO" secondAttribute="bottom" id="gTK-du-v2e"/>
+                <constraint firstItem="09K-6c-OWQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="leE-RO-K5L"/>
+                <constraint firstItem="QCZ-SM-FDO" firstAttribute="top" secondItem="09K-6c-OWQ" secondAttribute="bottom" constant="20" id="mt1-9h-JmL"/>
+                <constraint firstItem="1PK-vH-MQe" firstAttribute="top" secondItem="QCZ-SM-FDO" secondAttribute="bottom" constant="20" id="nJ6-wn-AKn"/>
+                <constraint firstItem="tt7-Se-ZSr" firstAttribute="leading" secondItem="wQq-yg-vb8" secondAttribute="leading" id="sfH-MM-r1I"/>
+                <constraint firstItem="8FW-Zo-0ij" firstAttribute="leading" secondItem="tt7-Se-ZSr" secondAttribute="leading" id="sm1-d3-dqH"/>
+            </constraints>
+            <point key="canvasLocation" x="26.5" y="52.5"/>
+        </view>
+    </objects>
+</document>

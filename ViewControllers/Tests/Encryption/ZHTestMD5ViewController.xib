@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZHTestMD5ViewController">
+            <connections>
+                <outlet property="aesDecryButton" destination="9mk-Y6-CNa" id="w4b-JR-TQW"/>
+                <outlet property="aesEncryButton" destination="Q8I-cs-pkE" id="fIK-IF-1s6"/>
+                <outlet property="button" destination="MM0-BB-zDQ" id="WWJ-6Q-Kh3"/>
+                <outlet property="md5CocosButton" destination="ORI-Hl-c1k" id="1dW-Jr-yk6"/>
+                <outlet property="md5ResultLabel" destination="QKm-Za-8bC" id="iSI-gy-X8i"/>
+                <outlet property="originTextTextView" destination="PjZ-kj-9rN" id="WeE-bz-GY3"/>
+                <outlet property="textView" destination="ldI-kU-c3B" id="X2u-UT-PB3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ldI-kU-c3B">
+                    <rect key="frame" x="10" y="0.0" width="580" height="160"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="nlF-MS-3FO"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MM0-BB-zDQ">
+                    <rect key="frame" x="10" y="190" width="100" height="50"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="D50-CC-MDO"/>
+                        <constraint firstAttribute="width" constant="100" id="yRM-xQ-rjr"/>
+                    </constraints>
+                    <state key="normal" title="MD5">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonTouchUpInside:" destination="-1" eventType="touchUpInside" id="iiw-YZ-NTM"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="原文" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77p-qW-hpI">
+                    <rect key="frame" x="10" y="270" width="34" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PjZ-kj-9rN">
+                    <rect key="frame" x="10" y="296" width="580" height="160"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="iWw-go-f3J"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MD5结果" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jL-nQ-tk0">
+                    <rect key="frame" x="10" y="476" width="71" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MD5RESULT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKm-Za-8bC">
+                    <rect key="frame" x="10" y="502" width="98" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.89070364930000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORI-Hl-c1k">
+                    <rect key="frame" x="120" y="190" width="100" height="50"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="mho-jG-5ME"/>
+                        <constraint firstAttribute="width" constant="100" id="qSR-t4-ACO"/>
+                    </constraints>
+                    <state key="normal" title="MD5-CS">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="md5CocosButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="s3d-t3-Exg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8I-cs-pkE">
+                    <rect key="frame" x="230" y="190" width="100" height="50"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="Hto-rH-e96"/>
+                        <constraint firstAttribute="height" constant="50" id="PyP-0O-xgZ"/>
+                    </constraints>
+                    <state key="normal" title="AES加密">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="aesEncryButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="9JX-kN-DKx"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mk-Y6-CNa">
+                    <rect key="frame" x="340" y="190" width="100" height="50"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="TBc-YN-o8E"/>
+                        <constraint firstAttribute="width" constant="100" id="fRI-Q7-MNK"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="sKH-Oy-Dh4"/>
+                        <constraint firstAttribute="height" constant="50" id="yyw-Ug-gf0"/>
+                    </constraints>
+                    <state key="normal" title="AES解密">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="TBc-YN-o8E"/>
+                            <exclude reference="sKH-Oy-Dh4"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="aesDecryButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="Ekz-9Y-1f5"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="QKm-Za-8bC" firstAttribute="top" secondItem="4jL-nQ-tk0" secondAttribute="bottom" constant="5" id="3M2-Nf-Kha"/>
+                <constraint firstItem="9mk-Y6-CNa" firstAttribute="centerY" secondItem="Q8I-cs-pkE" secondAttribute="centerY" id="5SZ-ms-kVj"/>
+                <constraint firstItem="PjZ-kj-9rN" firstAttribute="top" secondItem="77p-qW-hpI" secondAttribute="bottom" constant="5" id="7F3-bt-l0W"/>
+                <constraint firstItem="4jL-nQ-tk0" firstAttribute="top" secondItem="PjZ-kj-9rN" secondAttribute="bottom" constant="20" id="Af5-gs-9xV"/>
+                <constraint firstItem="MM0-BB-zDQ" firstAttribute="leading" secondItem="ldI-kU-c3B" secondAttribute="leading" id="IFi-ON-qiP"/>
+                <constraint firstItem="PjZ-kj-9rN" firstAttribute="trailing" secondItem="ldI-kU-c3B" secondAttribute="trailing" id="KZO-K7-QGX"/>
+                <constraint firstItem="4jL-nQ-tk0" firstAttribute="leading" secondItem="PjZ-kj-9rN" secondAttribute="leading" id="NJd-Mx-phH"/>
+                <constraint firstItem="9mk-Y6-CNa" firstAttribute="leading" secondItem="Q8I-cs-pkE" secondAttribute="trailing" constant="10" id="Puf-e3-4at"/>
+                <constraint firstItem="MM0-BB-zDQ" firstAttribute="centerX" secondItem="ldI-kU-c3B" secondAttribute="centerX" id="RKf-Gm-UKu"/>
+                <constraint firstItem="MM0-BB-zDQ" firstAttribute="top" secondItem="ldI-kU-c3B" secondAttribute="bottom" constant="30" id="Skc-Ne-tAJ"/>
+                <constraint firstItem="PjZ-kj-9rN" firstAttribute="leading" secondItem="ldI-kU-c3B" secondAttribute="leading" id="VyB-Mn-hVo"/>
+                <constraint firstItem="ORI-Hl-c1k" firstAttribute="centerY" secondItem="MM0-BB-zDQ" secondAttribute="centerY" id="cqZ-fp-HPI"/>
+                <constraint firstItem="ldI-kU-c3B" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="e4j-3I-Rew"/>
+                <constraint firstItem="ldI-kU-c3B" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mFj-Hk-eUE"/>
+                <constraint firstItem="QKm-Za-8bC" firstAttribute="leading" secondItem="4jL-nQ-tk0" secondAttribute="leading" id="oAA-Fs-rMD"/>
+                <constraint firstItem="ORI-Hl-c1k" firstAttribute="leading" secondItem="MM0-BB-zDQ" secondAttribute="trailing" constant="10" id="oOH-UN-gMn"/>
+                <constraint firstItem="77p-qW-hpI" firstAttribute="top" secondItem="MM0-BB-zDQ" secondAttribute="bottom" constant="30" id="orS-dK-1i9"/>
+                <constraint firstItem="Q8I-cs-pkE" firstAttribute="leading" secondItem="ORI-Hl-c1k" secondAttribute="trailing" constant="10" id="qUJ-4a-VQe"/>
+                <constraint firstItem="Q8I-cs-pkE" firstAttribute="centerY" secondItem="ORI-Hl-c1k" secondAttribute="centerY" id="thM-Gv-ltD"/>
+                <constraint firstItem="77p-qW-hpI" firstAttribute="leading" secondItem="ldI-kU-c3B" secondAttribute="leading" id="z6V-hd-vkt"/>
+                <constraint firstAttribute="trailing" secondItem="ldI-kU-c3B" secondAttribute="trailing" constant="10" id="zjr-WA-a0l"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="RKf-Gm-UKu"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>
