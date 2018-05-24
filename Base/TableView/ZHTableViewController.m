@@ -80,7 +80,22 @@
         }
     }
     else if (model.className) {
-        ZHViewController *viewController = [[NSClassFromString(model.className) alloc] init];
+        ZHViewController *viewController;
+        switch (model.createType) {
+            case ZHTestModelCreateTypeNormal:
+                viewController = [[NSClassFromString(model.className) alloc] init];
+                break;
+            case ZHTestModelCreateTypeStoryboard:
+            {
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:model.className bundle:nil];
+                if (storyboard) {
+                    viewController = [storyboard instantiateInitialViewController];
+                }
+            }
+                break;
+            default:
+                break;
+        }
         viewController.hidesBottomBarWhenPushed = YES;
         
         switch (model.showViewStyle) {

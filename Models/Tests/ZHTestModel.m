@@ -42,4 +42,12 @@
     return self;
 }
 
+- (instancetype)initWithTitle:(NSString *)title className:(NSString *)className showViewStyle:(ZHTestModelShowViewStyle)showViewStyle createType:(ZHTestModelCreateType)createType {
+    self = [self initWithTitle:title className:className showViewStyle:showViewStyle];
+    if (self) {
+        self.createType = createType;
+    }
+    return self;
+}
+
 @end

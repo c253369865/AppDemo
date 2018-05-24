@@ -14,6 +14,11 @@ typedef NS_ENUM(NSUInteger, ZHTestModelShowViewStyle) {
     ZHTestModelShowViewStyleDefault = ZHTestModelShowViewStylePush,
 };
 
+typedef NS_ENUM(NSUInteger, ZHTestModelCreateType) {
+    ZHTestModelCreateTypeNormal,
+    ZHTestModelCreateTypeStoryboard,
+};
+
 @interface ZHTestModel : JSONModel
 
 @property (copy, nonatomic) NSString *title;
@@ -24,9 +29,12 @@ typedef NS_ENUM(NSUInteger, ZHTestModelShowViewStyle) {
 @property (copy, nonatomic) NSString *methodName;
 // 下一个界面弹出方式
 @property (assign, nonatomic) ZHTestModelShowViewStyle showViewStyle;
+// 默认是 ZHTestModelCreateTypeNormal
+@property (assign, nonatomic) ZHTestModelCreateType createType;
 
 - (instancetype)initWithTitle:(NSString *)title className:(NSString *)className;
 - (instancetype)initWithTitle:(NSString *)title className:(NSString *)className showViewStyle:(ZHTestModelShowViewStyle)showViewStyle;
 - (instancetype)initWithTitle:(NSString *)title methodName:(NSString *)methodName;
+- (instancetype)initWithTitle:(NSString *)title className:(NSString *)className showViewStyle:(ZHTestModelShowViewStyle)showViewStyle createType:(ZHTestModelCreateType)createType;
 
 @end

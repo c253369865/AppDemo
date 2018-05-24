@@ -18,6 +18,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "ZHDisplayLinkViewController.h"
 #import "ZHTestBonjourViewController.h"
+#import "AppDemo-Swift.h"
 
 #import "APLResultsTableController.h"
 #import "ZHMotionViewController.h"
@@ -106,6 +107,7 @@
     [array addObject:[[ZHTestModel alloc] initWithTitle:@"Runtime" className:NSStringFromClass([ZHRuntimeTableViewController class])]];
     [array addObject:[[ZHTestModel alloc] initWithTitle:@"Json" className:NSStringFromClass([ZHJsonTestViewController class])]];
     [array addObject:[[ZHTestModel alloc] initWithTitle:@"内存泄漏" className:NSStringFromClass([ZHTestLeakedMemoryViewController class])]];
+    [array addObject:[[ZHTestModel alloc] initWithTitle:@"GPUImage" className:@"GPUImageStoryboard" showViewStyle:ZHTestModelShowViewStylePush createType:ZHTestModelCreateTypeStoryboard]];
     
     self.dataArray = array;
     [self.tableView registerNib:[UINib nibWithNibName:@"ZHTableViewCell" bundle:nil] forCellReuseIdentifier:ZH_TABLEVIEWCELL_ID];
