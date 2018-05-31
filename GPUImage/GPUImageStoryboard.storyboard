@@ -20,90 +20,69 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="dvr-4B-tce" kind="relationship" relationship="viewControllers" id="Skl-m5-0Me"/>
-                        <segue destination="cQ6-uy-pxI" kind="relationship" relationship="viewControllers" id="0ba-dM-SMC"/>
+                        <segue destination="XUL-NZ-1zp" kind="relationship" relationship="viewControllers" id="5NS-wl-oYV"/>
+                        <segue destination="1ij-pP-WQC" kind="relationship" relationship="viewControllers" id="eSl-rC-HoO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOZ-Ut-ePR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1015" y="-160"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="HQJ-ZM-XYL">
+        <!--Video Filter-->
+        <scene sceneID="hVW-99-GXs">
             <objects>
-                <tableViewController id="W1C-RB-tfl" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lof-sd-2da">
+                <viewController id="1ij-pP-WQC" customClass="ZHVideoTableViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oSD-8f-zy6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GBP-3O-fPb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="v9T-au-kBD"/>
+                                </constraints>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFx-l0-nip" customClass="ZHCameraPreviewView">
+                                <rect key="frame" x="10" y="168" width="355" height="460"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Kdf-yT-qBI">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kdf-yT-qBI" id="NCs-7A-t4t">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="W1C-RB-tfl" id="s8M-n3-kta"/>
-                            <outlet property="delegate" destination="W1C-RB-tfl" id="kEq-Pg-yth"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="x6X-g2-hF8"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="buF-Zz-R9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="886" y="197"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="gTJ-BT-9gZ">
-            <objects>
-                <navigationController id="cQ6-uy-pxI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="Item" id="1cZ-M3-T7F"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g87-Ra-3d7">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
+                        <constraints>
+                            <constraint firstItem="iFx-l0-nip" firstAttribute="bottom" secondItem="r0m-fP-PyQ" secondAttribute="bottom" constant="10" id="N6o-1u-XIX"/>
+                            <constraint firstItem="iFx-l0-nip" firstAttribute="top" secondItem="GBP-3O-fPb" secondAttribute="bottom" constant="20" id="P5Z-sx-Zp1"/>
+                            <constraint firstItem="iFx-l0-nip" firstAttribute="leading" secondItem="r0m-fP-PyQ" secondAttribute="leading" constant="10" id="T78-7W-y03"/>
+                            <constraint firstItem="GBP-3O-fPb" firstAttribute="top" secondItem="r0m-fP-PyQ" secondAttribute="top" id="Wbv-jY-7Xe"/>
+                            <constraint firstItem="r0m-fP-PyQ" firstAttribute="trailing" secondItem="iFx-l0-nip" secondAttribute="trailing" constant="10" id="X56-Db-J6A"/>
+                            <constraint firstItem="GBP-3O-fPb" firstAttribute="leading" secondItem="r0m-fP-PyQ" secondAttribute="leading" id="ggv-tc-a0j"/>
+                            <constraint firstItem="r0m-fP-PyQ" firstAttribute="trailing" secondItem="GBP-3O-fPb" secondAttribute="trailing" id="umk-Et-RK6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r0m-fP-PyQ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="Video Filter" image="info.png" id="x2G-TP-qYs"/>
                     <connections>
-                        <segue destination="W1C-RB-tfl" kind="relationship" relationship="rootViewController" id="81l-hn-grB"/>
+                        <outlet property="cameraPreView" destination="iFx-l0-nip" id="NaA-Kx-QSm"/>
+                        <outlet property="tableView" destination="GBP-3O-fPb" id="mnL-b8-1cY"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="239-cx-5Oa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zSR-1k-R27" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-66" y="197"/>
+            <point key="canvasLocation" x="-66.400000000000006" y="188.45577211394306"/>
         </scene>
-        <!--Still Image-->
-        <scene sceneID="9op-dC-hYY">
-            <objects>
-                <navigationController id="dvr-4B-tce" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Still Image" id="tAZ-nd-YwM"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vhx-f2-Z5o">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="XUL-NZ-1zp" kind="relationship" relationship="rootViewController" id="DhH-mx-0jE"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j3h-p4-nm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-66" y="-511"/>
-        </scene>
-        <!--Image Still Images Table View Controller-->
+        <!--Still Images-->
         <scene sceneID="wlS-dK-Dmp">
             <objects>
-                <viewController id="XUL-NZ-1zp" customClass="ZHGPUImageStillImagesTableViewController" customModule="AppDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XUL-NZ-1zp" customClass="ZHStillImagesTableViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gvD-9U-ez5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lambeau" translatesAutoresizingMaskIntoConstraints="NO" id="1zI-wt-BkK">
-                                <rect key="frame" x="5" y="214" width="365" height="404"/>
+                                <rect key="frame" x="5" y="170" width="365" height="438"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TTY-1u-bkY">
-                                <rect key="frame" x="0.0" y="64" width="375" height="128"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="iHH-IA-jPj"/>
@@ -118,22 +97,25 @@
                             <constraint firstItem="Xhs-HX-eEm" firstAttribute="trailing" secondItem="TTY-1u-bkY" secondAttribute="trailing" id="CLF-pV-C0Y"/>
                             <constraint firstItem="TTY-1u-bkY" firstAttribute="top" secondItem="Xhs-HX-eEm" secondAttribute="top" id="FLI-4s-09P"/>
                             <constraint firstItem="1zI-wt-BkK" firstAttribute="leading" secondItem="Xhs-HX-eEm" secondAttribute="leading" constant="5" id="OlL-5a-bJS"/>
-                            <constraint firstItem="1zI-wt-BkK" firstAttribute="bottom" secondItem="Xhs-HX-eEm" secondAttribute="bottom" id="qAW-Om-k3B"/>
+                            <constraint firstItem="1zI-wt-BkK" firstAttribute="bottom" secondItem="Xhs-HX-eEm" secondAttribute="bottom" constant="-10" id="qAW-Om-k3B"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xhs-HX-eEm"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Still Images" image="arrow.png" id="BHQ-4S-ZhQ"/>
                     <navigationItem key="navigationItem" id="ElH-eW-nfq"/>
                     <connections>
                         <outlet property="bgImageView" destination="1zI-wt-BkK" id="gQ6-Xf-aaN"/>
-                        <outlet property="tableView" destination="TTY-1u-bkY" id="r0G-wT-NyI"/>
+                        <outlet property="tableView" destination="TTY-1u-bkY" id="cfF-cO-CPo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Whk-hx-wfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781.60000000000002" y="-511.39430284857576"/>
+            <point key="canvasLocation" x="-66" y="-470"/>
         </scene>
     </scenes>
     <resources>
         <image name="Lambeau" width="2000" height="1494"/>
+        <image name="arrow.png" width="15" height="40"/>
+        <image name="info.png" width="28" height="28"/>
     </resources>
 </document>

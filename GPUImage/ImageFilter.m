@@ -89,9 +89,12 @@
     
     CIImage *inputImage = [[CIImage alloc] initWithCGImage:imageToProcess.CGImage];
     
-    CIFilter *sepiaTone = [CIFilter filterWithName:@"CIMotionBlur"
+//    CIFilter *sepiaTone = [CIFilter filterWithName:@"CIMotionBlur"
+//                                     keysAndValues: kCIInputImageKey, inputImage,
+//                nil];
+    CIFilter *sepiaTone = [CIFilter filterWithName:@"CISepiaTone"
                                      keysAndValues: kCIInputImageKey, inputImage,
-                nil];
+                           @"inputIntensity", [NSNumber numberWithFloat:1.0], nil];
     
     CIImage *result = [sepiaTone outputImage];
     
@@ -108,6 +111,8 @@
 }
 
 + (FilterReslut *)processedOnGpuImage:(UIImage *)imageToProcess {
+    NSLog(@"begin UIImageOrientation = %ld", imageToProcess.imageOrientation);
+    
     CFAbsoluteTime elapsedTime, startTime = CFAbsoluteTimeGetCurrent();
 
     GPUImagePicture *stillImageSource = [[GPUImagePicture alloc] initWithImage:imageToProcess];
@@ -117,13 +122,15 @@
     [stillImageFilter useNextFrameForImageCapture];
     [stillImageSource processImage];
 
-    UIImage *currentFilteredVideoFrame = [stillImageFilter imageFromCurrentFramebuffer];
+    UIImage *currentFilteredVideoFrame = [stillImageFilter imageFromCurrentFramebufferWithOrientation:imageToProcess.imageOrientation];
 
+    NSLog(@"after UIImageOrientation = %ld", currentFilteredVideoFrame.imageOrientation);
+    
     elapsedTime = CFAbsoluteTimeGetCurrent() - startTime;
     CGFloat useTime = elapsedTime * 1000.0;
     
-    UIImage *resultImage = [self image:currentFilteredVideoFrame rotation:UIImageOrientationUp];
-    FilterReslut *reslut = [FilterReslut resultWithTime:useTime resultImage:resultImage];
+//    UIImage *resultImage = [self image:currentFilteredVideoFrame rotation:UIImageOrientationUp];
+    FilterReslut *reslut = [FilterReslut resultWithTime:useTime resultImage:currentFilteredVideoFrame];
     return reslut;
 }
 

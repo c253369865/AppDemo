@@ -7,27 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface FilterReslut : NSObject
-
-@property (nonatomic, assign) CGFloat useTime;
-@property (nonatomic, strong) UIImage *resultImage;
-
-+ (instancetype)resultWithTime:(CGFloat)time resultImage:(UIImage *)resultImage;
-
-@end
-
-@implementation FilterReslut
-
-+ (instancetype)resultWithTime:(CGFloat)time resultImage:(UIImage *)resultImage {
-    FilterReslut *reslut = [FilterReslut new];
-    reslut.useTime = time;
-    reslut.resultImage = resultImage;
-    return reslut;
-}
-
-@end
-
+#import "FilterReslut.h"
 
 @interface ImageFilter : NSObject
 

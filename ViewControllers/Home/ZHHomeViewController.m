@@ -18,7 +18,6 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "ZHDisplayLinkViewController.h"
 #import "ZHTestBonjourViewController.h"
-#import "AppDemo-Swift.h"
 
 #import "APLResultsTableController.h"
 #import "ZHMotionViewController.h"
